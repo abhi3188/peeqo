@@ -1,5 +1,5 @@
 'use strict'
-
+// this is my personal version
 const {app, BrowserWindow } = require('electron')
 const os = require('os')
 
