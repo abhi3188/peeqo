@@ -14,6 +14,13 @@ function parseIntent(cmd){
 
 	switch(cmd.intent){
 
+		case "animals":
+		 	if(cmd.params.animals.stringValue == "puppy"){
+		 		actions.setAnswer(responses.puppy, {type: 'local'})
+		 	}
+				
+			break
+			
 		case "greeting":
 			actions.setAnswer(responses.greeting, {type: 'remote'})
 			break

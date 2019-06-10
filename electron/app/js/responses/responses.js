@@ -17,7 +17,16 @@ module.exports = {
 		cbAfter: function <- callback function after media playback
 	}
 	*/
-
+	puppy: {
+		localFolder: 'puppy',
+		queryTerms: ["puppy", "dog", "puppies"],
+		servo: 'excited',
+		led: {
+			anim: 'blink',
+			color: 'green'
+		},
+		sound: null,
+	},
 
 	confused: {
 		localFolder: 'confused',
