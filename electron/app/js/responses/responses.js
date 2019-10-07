@@ -61,6 +61,61 @@ module.exports = {
 		sound: null
 	},
 
+	happy: {
+		localFolder: 'happy',
+		queryTerms: ['happy'],
+		servo: 'look-up',
+		led: {
+			anim: 'blink',
+			color: 'pink'
+		},
+		sound: null
+	},
+
+	sad: {
+		localFolder: 'sad',
+		queryTerms: ['sad'],
+		servo: 'look-down',
+		led: {
+			anim: 'blink',
+			color: 'blue'
+		},
+		sound: null
+	},
+
+	angry: {
+		localFolder: 'angry',
+		queryTerms: ['angry'],
+		servo: 'look-up',
+		led: {
+			anim: 'blink',
+			color: 'red'
+		},
+		sound: null
+	},
+
+	excited: {
+		localFolder: 'excited',
+		queryTerms: ['excited'],
+		servo: 'jiggle',
+		led: {
+			anim: 'blink',
+			color: 'yellow'
+		},
+		sound: null
+	},
+
+	random: {
+		localFolder: 'random',
+		queryTerms: ['excited'],
+		servo: 'look-up',
+		led: {
+			anim: 'circleOut',
+			color: 'yellow'
+		},
+		sound: null
+	},
+
 	bye: {
 		localFolder: "bye",
 		queryTerms:["bye","see you","goodbye","ciao","so long"],

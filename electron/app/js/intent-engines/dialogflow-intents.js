@@ -42,6 +42,26 @@ function parseIntent(cmd){
 			actions.setAnswer(responses.howAreYou, {type: 'local'})
 			break
 
+		case "happy":
+			actions.setAnswer(responses.happy, {type: 'local'})
+			break
+
+		case "sad":
+			actions.setAnswer(responses.sad, {type: 'local'})
+			break
+
+		case "random":
+			actions.setAnswer(responses.random, {type: 'local'})
+			break
+
+		case "excited":
+			actions.setAnswer(responses.excited, {type: 'local'})
+			break
+
+		case "angry":
+			actions.setAnswer(responses.angry, {type: 'local'})
+			break
+
 		case "weather":
 			weather.getWeather(cmd.params.city.stringValue)
 			break

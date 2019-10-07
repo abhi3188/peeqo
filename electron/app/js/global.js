@@ -70,7 +70,7 @@ const text = require('js/senses/text')
 // set audio volume level. 0 - mute; 1-max
 event.emit('set-volume', 0.5)
 
-let responses = ['greeting', 'howAreYou', 'goodbye', 'animals', 'camera-on', 'changeGlasses', 'confused']
+let responses = ['greeting', 'howAreYou', 'goodbye', 'happy', 'sad', 'angry', 'random', 'excited', 'animals', 'camera-on', 'changeGlasses', 'confused']
 
 let responseNum = 0
 
