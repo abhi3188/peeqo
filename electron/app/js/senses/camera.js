@@ -32,6 +32,9 @@ class Camera{
 	startCamera(){
 		if(this.connected){
 			this.client.invoke("startCamera")
+			setTimeout(()=>{
+				event.emit('camera-off')
+			}, 5000)
 		}
 	}
 

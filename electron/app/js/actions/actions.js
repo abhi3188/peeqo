@@ -67,14 +67,27 @@ async function setAnswer(ans=null, overrides={}){
 
 	console.log(`RESPONSE > END`)
 
+	await wait(1500)
+
 	// callback
 	if(ans.hasOwnProperty('cbAfter')){
 		ans.cbAfter()
 	}
 }
 
-function wakeword(){
-	setAnswer(responses.wakeword, {type:'wakeword'})
+function wait(ms){
+	return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+function wakeword(response){
+
+	let copy = Object.assign({}, responses.wakeword, {cbAfter: function(){
+		event.emit("final-command", response )
+	}})
+
+	console.log(copy)
+
+	setAnswer(copy, {type:'wakeword'})
 }
 
 

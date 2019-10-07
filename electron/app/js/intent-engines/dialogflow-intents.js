@@ -10,28 +10,36 @@ function parseIntent(cmd){
 
 	// this one is for google dialogflow, you might need to make adjustments for a different engine	
 
-	console.log(cmd)
+	//console.log(cmd)
 
 	switch(cmd.intent){
 
 		case "animals":
-		 	if(cmd.params.animals.stringValue == "puppy"){
+		 	//if(cmd.params.animals.stringValue == "puppy"){
 		 		actions.setAnswer(responses.puppy, {type: 'local'})
-		 	}
+		 	//}
 				
 			break
 			
 		case "greeting":
-			actions.setAnswer(responses.greeting, {type: 'remote'})
+			actions.setAnswer(responses.greeting, {type: 'local'})
 			break
 
 		case "camera":
 			event.emit(`camera-${cmd.params.on.stringValue}`)
 			break
 
+		case "camera-on":
+			event.emit("camera-on")
+			break
+
 		case "timer":
 			let timer = new Timer(cmd.params.time.numberValue, cmd.params.timeUnit.stringValue)
 			timer.startTimer()
+			break
+
+		case "howAreYou":
+			actions.setAnswer(responses.howAreYou, {type: 'local'})
 			break
 
 		case "weather":

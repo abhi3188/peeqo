@@ -47,6 +47,7 @@ module.exports = () => {
 
 	event.on('set-volume', speak.setVolume)
 
+	
 	// BUTTON PRESSES
 	event.on('btn-4-short-press',()=>{
 		console.log('btn 4 short press')
@@ -64,8 +65,17 @@ module.exports = () => {
 		power.shutdown()
 	})
 
+	let mute = false
+	
 	event.on('btn-17-short-press',()=>{
 		console.log('btn 17 short press')
+		mute = !mute
+
+		if(mute){
+			event.emit('set-volume', 0.0)
+		} else {
+			event.emit('set-volume', 0.5)
+		}
 	})
 	event.on('btn-17-long-press',()=>{
 		console.log('btn 17 long press')

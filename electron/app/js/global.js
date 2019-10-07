@@ -68,7 +68,25 @@ const servo = new Servo()
 const text = require('js/senses/text')
 
 // set audio volume level. 0 - mute; 1-max
-event.emit('set-volume',0.4)
+event.emit('set-volume', 0.5)
+
+let responses = ['greeting', 'howAreYou', 'goodbye', 'animals', 'camera-on', 'changeGlasses', 'confused']
+
+let responseNum = 0
+
+let loopInterval = 15000
+
+setInterval(()=>{
+
+	event.emit('wakeword', {intent: responses[responseNum]})	
+	responseNum++
+
+	if(responseNum == responses.length){
+		responseNum = 0
+	}
+
+}, loopInterval)
+
 
 // initiate listening or show wakeword button
 if(process.env.OS == 'unsupported'){
@@ -80,6 +98,6 @@ if(process.env.OS == 'unsupported'){
 		event.emit('wakeword')
 	})
 } else {
-	listen.startListening()
+	//listen.startListening()
 	document.getElementById("wakeword").style.display = "none"
 }

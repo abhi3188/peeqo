@@ -50,6 +50,17 @@ module.exports = {
 		sound: null
 	},
 
+	howAreYou: {
+		localFolder: 'howAreYou',
+		queryTerms: ['how are you'],
+		servo: 'look-up',
+		led: {
+			anim: 'circleOut',
+			color: 'purple'
+		},
+		sound: null
+	},
+
 	bye: {
 		localFolder: "bye",
 		queryTerms:["bye","see you","goodbye","ciao","so long"],
