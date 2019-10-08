@@ -20,7 +20,7 @@ module.exports = {
 	puppy: {
 		localFolder: 'puppy',
 		queryTerms: ["puppy", "dog", "puppies"],
-		servo: 'excited',
+		servo: 'look-up',
 		led: {
 			anim: 'blink',
 			color: 'green'
