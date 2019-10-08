@@ -66,7 +66,7 @@ module.exports = () => {
 	})
 
 	let mute = false
-	
+
 	event.on('btn-17-short-press',()=>{
 		console.log('btn 17 short press')
 		mute = !mute
@@ -81,9 +81,20 @@ module.exports = () => {
 		console.log('btn 17 long press')
 	})
 
+	let goOnLoop = true
+
 	event.on('btn-23-short-press',()=>{
 		console.log('btn 23 short press')
+		goOnLoop = !goOnLoop
+
+		if(goOnLoop){
+			event.emit('start-loop')
+		} else {
+			event.emit('stop-loop')
+		}
+
 	})
+	
 	event.on('btn-23-long-press',()=>{
 		console.log('btn 23 long press')
 	})

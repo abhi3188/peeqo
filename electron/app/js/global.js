@@ -76,17 +76,33 @@ let responseNum = 0
 
 let loopInterval = 15000
 
-setInterval(()=>{
+let loopTimer = null
 
-	event.emit('wakeword', {intent: responses[responseNum]})	
-	responseNum++
+function loop(){
 
-	if(responseNum == responses.length){
-		responseNum = 0
-	}
+	loopTimer = setInterval(()=>{
 
-}, loopInterval)
+		event.emit('wakeword', {intent: responses[responseNum]})	
+		responseNum++
 
+		if(responseNum == responses.length){
+			responseNum = 0
+		}
+
+	}, loopInterval)
+
+}
+
+event.on('stop-loop', ()=>{
+	clearInterval(loopTimer)
+	loopTimer = null
+})
+
+event.on('start-loop', ()=>{
+	loop()
+})
+
+loop()
 
 // initiate listening or show wakeword button
 if(process.env.OS == 'unsupported'){
